@@ -56,24 +56,22 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: white;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
+            text-decoration: none;
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-teal) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: bold;
+            width: 50px;
+            height: 50px;
+        }
+
+        .logo-text span {
+            color: var(--accent-teal);
         }
 
         .nav-links {
@@ -220,16 +218,20 @@
         }
 
         .logo-large {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(15, 58, 125, 0.3) 0%, rgba(16, 185, 129, 0.1) 100%);
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 58, 125, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
-            font-weight: 900;
-            background-clip: text;
+        }
+
+        .logo-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 30px rgba(16, 185, 129, 0.2));
         }
 
         /* Values Section */
@@ -358,6 +360,46 @@
             gap: 0.8rem;
         }
 
+        /* Featured Image Section */
+        .featured-section {
+            background: white;
+            padding: 6rem 2rem;
+        }
+
+        .featured-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .featured-content h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .featured-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--primary-dark) 0%, #162a47 100%);
@@ -424,6 +466,17 @@
             line-height: 1.8;
         }
 
+        .contact-item a {
+            color: var(--accent-teal);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-green);
+        }
+
         .contact-form {
             background: var(--light-bg);
             padding: 2rem;
@@ -462,6 +515,31 @@
         .form-group textarea {
             resize: vertical;
             min-height: 120px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-teal);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-green);
+            transform: translateY(-3px);
         }
 
         /* Footer */
@@ -527,7 +605,8 @@
                 font-size: 1.8rem;
             }
 
-            .contact-grid {
+            .contact-grid,
+            .featured-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -540,6 +619,10 @@
             .footer-links {
                 flex-direction: column;
                 gap: 1rem;
+            }
+
+            .featured-image {
+                height: 300px;
             }
         }
 
@@ -556,10 +639,15 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
-                <div class="logo-icon">P</div>
-                <span>PathReady Solutions</span>
-            </div>
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                    <!-- R Letter -->
+                    <path d="M 10 40 L 10 10 L 25 10 Q 35 10 35 18 Q 35 25 25 25 L 10 25 M 25 25 Q 35 25 40 40" stroke="#0F3A7D" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Arrow -->
+                    <path d="M 35 15 L 40 10 L 38 20" stroke="#10B981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">Path<span>Ready</span></span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#services">الخدمات</a></li>
                 <li><a href="#values">القيم</a></li>
@@ -574,14 +662,28 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1>تكنولوجيا تحرك عملك <span class="highlight">للأمام</span></h1>
-                <p>نساعد الشركات في الأسواق الناشئة على تحقيق أهدافها من خلال حلول تكنولوجية مبتكرة وموثوقة.</p>
+                <p>نساعد الشركات في الأسواق الناشئة على تحقيق أهدافها من خلال حلول تكنولوجية مبتكرة وموثوقة. من السودان للعالم.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn-primary">احصل على استشارة مجانية</a>
                     <a href="#services" class="btn-secondary">تعرّف على خدماتنا</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="logo-large">🚀</div>
+                <div class="logo-large">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Main R -->
+                        <g transform="translate(50, 30)">
+                            <path d="M 20 180 L 20 20 L 100 20 Q 150 20 150 70 Q 150 110 100 120 L 20 120 M 100 120 Q 150 120 180 180" stroke="#0F3A7D" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Arrow -->
+                            <g transform="translate(120, 20)">
+                                <path d="M 0 0 L 60 -30 L 50 30" stroke="#10B981" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <!-- Road -->
+                            <path d="M 30 150 Q 80 180 130 160 Q 150 150 170 140" stroke="#0F3A7D" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.6"/>
+                            <path d="M 50 160 L 70 165 M 90 170 L 110 165 M 130 160 L 150 155" stroke="#0F3A7D" stroke-width="6" fill="none" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
@@ -613,6 +715,23 @@
                     <div class="value-icon">🤝</div>
                     <h3>الشراكة</h3>
                     <p>فريق مخصص يعمل معك كشريك حقيقي نحو النجاح</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Image Section -->
+    <section class="featured-section">
+        <div class="featured-container">
+            <div class="featured-grid">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="فريق يعمل على مشروع تكنولوجي" class="featured-image">
+                </div>
+                <div class="featured-content">
+                    <h2>حلول تكنولوجية للأسواق الناشئة</h2>
+                    <p>نفهم احتياجات السوق السودانية والعربية بشكل عميق. خبرتنا في تطوير الحلول المخصصة تجعلنا الشريك الأمثل لنمو عملك.</p>
+                    <p>من التطبيقات الجوالة إلى الأنظمة الشاملة، نقدم حلولاً مبتكرة تواكب احتياجات السوق المتطورة.</p>
+                    <a href="#contact" class="btn-primary">استشير معنا الآن</a>
                 </div>
             </div>
         </div>
@@ -682,19 +801,28 @@
                     <div class="contact-item">
                         <div class="contact-icon">📱</div>
                         <div>
-                            <p><strong>الهاتف:</strong><br>+249 90 123 4567</p>
+                            <p><strong>الهاتف:</strong><br><a href="tel:+966536627478">+966 536627478</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div>
-                            <p><strong>البريد:</strong><br>info@pathreadysolutions.com</p>
+                            <p><strong>البريد:</strong><br><a href="mailto:pathready@gmail.com">pathready@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">🌐</div>
                         <div>
-                            <p><strong>الموقع:</strong><br>www.pathreadysolutions.com</p>
+                            <p><strong>الموقع:</strong><br><a href="https://pathready.tech" target="_blank">www.pathready.tech</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">👥</div>
+                        <div>
+                            <p><strong>متابعنا:</strong></p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/profile.php?id=61591674481771" target="_blank" title="Facebook">f</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -706,6 +834,10 @@
                     <div class="form-group">
                         <label for="email">بريدك الإلكتروني</label>
                         <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم هاتفك</label>
+                        <input type="tel" id="phone" name="phone">
                     </div>
                     <div class="form-group">
                         <label for="company">اسم شركتك</label>
@@ -732,15 +864,35 @@
                 <a href="#">شروط الاستخدام</a>
             </div>
             <p>&copy; 2024 PathReady Solutions. جميع الحقوق محفوظة.</p>
-            <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 1rem;">تكنولوجيا تحرك عملك للأمام</p>
+            <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 1rem;">تكنولوجيا تحرك عملك للأمام | من السودان للعالم</p>
         </div>
     </footer>
 
     <script>
         function handleSubmit(event) {
             event.preventDefault();
-            alert('شكراً لتواصلك معنا! سيتم التواصل معك قريباً.');
-            event.target.reset();
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create mailto link
+            const subject = `استفسار من ${formData.name} - PathReady Solutions`;
+            const body = `
+الاسم: ${formData.name}
+البريد: ${formData.email}
+الهاتف: ${formData.phone}
+الشركة: ${formData.company}
+
+الرسالة:
+${formData.message}
+            `.trim();
+            
+            const mailtoLink = `mailto:pathready@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
         }
     </script>
 </body>
