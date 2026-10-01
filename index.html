@@ -227,13 +227,6 @@
             justify-content: center;
         }
 
-        .logo-large img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 30px rgba(16, 185, 129, 0.2));
-        }
-
         /* Values Section */
         .values {
             background: white;
@@ -303,6 +296,46 @@
             line-height: 1.7;
         }
 
+        /* Featured Section */
+        .featured-section {
+            background: white;
+            padding: 6rem 2rem;
+        }
+
+        .featured-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .featured-content h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .featured-content p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
         /* Services Section */
         .services {
             background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
@@ -360,43 +393,155 @@
             gap: 0.8rem;
         }
 
-        /* Featured Image Section */
-        .featured-section {
-            background: white;
+        /* Blog Section */
+        .blog-section {
+            background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
             padding: 6rem 2rem;
         }
 
-        .featured-container {
+        .blog-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .featured-grid {
+        .blog-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .featured-image {
-            width: 100%;
-            height: 400px;
+        .blog-card {
+            background: white;
             border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .featured-content h2 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card-category {
+            display: inline-block;
+            background: var(--accent-teal);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Jobs Section */
+        .jobs-section {
+            background: white;
+            padding: 6rem 2rem;
+        }
+
+        .jobs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .job-card {
+            background: white;
+            border-left: 4px solid var(--accent-teal);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .job-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
             color: var(--primary-dark);
         }
 
-        .featured-content p {
-            font-size: 1.05rem;
+        .job-type-badge {
+            background: var(--accent-teal);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
             color: var(--text-muted);
-            line-height: 1.9;
+            font-size: 0.9rem;
+        }
+
+        .job-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
             margin-bottom: 1.5rem;
         }
 
@@ -612,7 +757,9 @@
             }
 
             .values-grid,
-            .services-grid {
+            .services-grid,
+            .blog-grid,
+            .jobs-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -641,16 +788,15 @@
         <div class="nav-container">
             <a href="#" class="logo">
                 <svg class="logo-icon" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                    <!-- R Letter -->
                     <path d="M 10 40 L 10 10 L 25 10 Q 35 10 35 18 Q 35 25 25 25 L 10 25 M 25 25 Q 35 25 40 40" stroke="#0F3A7D" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- Arrow -->
                     <path d="M 35 15 L 40 10 L 38 20" stroke="#10B981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span class="logo-text">Path<span>Ready</span></span>
             </a>
             <ul class="nav-links">
                 <li><a href="#services">الخدمات</a></li>
-                <li><a href="#values">القيم</a></li>
+                <li><a href="#blog">المقالات</a></li>
+                <li><a href="#careers">الوظائف</a></li>
                 <li><a href="#contact">تواصل معنا</a></li>
             </ul>
             <a href="#contact" class="cta-nav">ابدأ الآن</a>
@@ -671,14 +817,11 @@
             <div class="hero-visual">
                 <div class="logo-large">
                     <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Main R -->
                         <g transform="translate(50, 30)">
                             <path d="M 20 180 L 20 20 L 100 20 Q 150 20 150 70 Q 150 110 100 120 L 20 120 M 100 120 Q 150 120 180 180" stroke="#0F3A7D" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- Arrow -->
                             <g transform="translate(120, 20)">
                                 <path d="M 0 0 L 60 -30 L 50 30" stroke="#10B981" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                             </g>
-                            <!-- Road -->
                             <path d="M 30 150 Q 80 180 130 160 Q 150 150 170 140" stroke="#0F3A7D" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.6"/>
                             <path d="M 50 160 L 70 165 M 90 170 L 110 165 M 130 160 L 150 155" stroke="#0F3A7D" stroke-width="6" fill="none" stroke-linecap="round"/>
                         </g>
@@ -779,899 +922,31 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>هل أنت جاهز لتحريك عملك للأمام؟</h2>
-        <p>دع PathReady Solutions تساعدك على تحقيق أهدافك من خلال حلول تكنولوجية متطورة ومخصصة لاحتياجاتك.</p>
-        <a href="#contact" class="btn-primary">تواصل معنا اليوم</a>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>تواصل معنا</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <p><strong>الموقع:</strong><br>الخرطوم، السودان</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <p><strong>الهاتف:</strong><br><a href="tel:+966536627478">+966 536627478</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <p><strong>البريد:</strong><br><a href="mailto:pathready@gmail.com">pathready@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
-                        <div>
-                            <p><strong>الموقع:</strong><br><a href="https://pathready.tech" target="_blank">www.pathready.tech</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">👥</div>
-                        <div>
-                            <p><strong>متابعنا:</strong></p>
-                            <div class="social-links">
-                                <a href="https://www.facebook.com/profile.php?id=61591674481771" target="_blank" title="Facebook">f</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">اسمك</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">بريدك الإلكتروني</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">رقم هاتفك</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="company">اسم شركتك</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">رسالتك</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%;">أرسل رسالتك</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#services">الخدمات</a>
-                <a href="#values">القيم</a>
-                <a href="#contact">تواصل معنا</a>
-                <a href="#">سياسة الخصوصية</a>
-                <a href="#">شروط الاستخدام</a>
-            </div>
-            <p>&copy; 2024 PathReady Solutions. جميع الحقوق محفوظة.</p>
-            <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 1rem;">تكنولوجيا تحرك عملك للأمام | من السودان للعالم</p>
-        </div>
-    </footer>
-
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                company: document.getElementById('company').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Create mailto link
-            const subject = `استفسار من ${formData.name} - PathReady Solutions`;
-            const body = `
-الاسم: ${formData.name}
-البريد: ${formData.email}
-الهاتف: ${formData.phone}
-الشركة: ${formData.company}
-
-الرسالة:
-${formData.message}
-            `.trim();
-            
-            const mailtoLink = `mailto:pathready@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
-        }
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PathReady Solutions - تكنولوجيا تحرك عملك للأمام</title>
-    <meta name="description" content="حلول تكنولوجية متقدمة لنمو وتطور عملك. نساعدك على الوصول إلى أهدافك بثقة وابتكار.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-dark: #0D1B2A;
-            --primary-blue: #0F3A7D;
-            --accent-teal: #10B981;
-            --accent-green: #14AE5C;
-            --light-bg: #F8FAFC;
-            --text-dark: #1E293B;
-            --text-muted: #64748B;
-            --border-light: #E2E8F0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            z-index: 1000;
-            background: rgba(13, 27, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(16, 185, 129, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-        }
-
-        .logo-text span {
-            color: var(--accent-teal);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-teal);
-        }
-
-        .cta-nav {
-            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-green) 100%);
-            color: white;
-            padding: 0.6rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cta-nav:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #162a47 100%);
-            color: white;
-            padding: 8rem 2rem 6rem;
-            margin-top: 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-
-        .hero-content h1 .highlight {
-            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-green) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-content p {
-            font-size: 1.25rem;
-            color: #cbd5e1;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            max-width: 500px;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-green) 100%);
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            padding: 1rem 2.5rem;
-            border: 2px solid var(--accent-teal);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(16, 185, 129, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .hero-visual {
-            position: relative;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-large {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(15, 58, 125, 0.2) 0%, rgba(16, 185, 129, 0.1) 100%);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-large img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 30px rgba(16, 185, 129, 0.2));
-        }
-
-        /* Values Section */
-        .values {
-            background: white;
-            padding: 6rem 2rem;
-        }
-
-        .values-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .value-card {
-            background: var(--light-bg);
-            padding: 2.5rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .value-card:hover {
-            background: white;
-            border-color: var(--accent-teal);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
-        }
-
-        .value-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .value-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            color: var(--primary-dark);
-        }
-
-        .value-card p {
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* Services Section */
-        .services {
-            background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
-            padding: 6rem 2rem;
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border-right: 4px solid var(--accent-teal);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .service-link {
-            color: var(--accent-teal);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s ease;
-        }
-
-        .service-link:hover {
-            gap: 0.8rem;
-        }
-
-        /* Featured Image Section */
-        .featured-section {
-            background: white;
-            padding: 6rem 2rem;
-        }
-
-        .featured-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .featured-image {
-            width: 100%;
-            height: 400px;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .featured-content h2 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark);
-        }
-
-        .featured-content p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #162a47 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: white;
-            padding: 6rem 2rem;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--primary-dark);
-        }
-
-        .contact-item {
-            margin-bottom: 1.5rem;
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--accent-teal);
-            min-width: 30px;
-        }
-
-        .contact-item p {
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-
-        .contact-item a {
-            color: var(--accent-teal);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: var(--accent-green);
-        }
-
-        .contact-form {
-            background: var(--light-bg);
-            padding: 2rem;
-            border-radius: 12px;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--border-light);
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-teal);
-            background: white;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--accent-teal);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-
-        .social-links a:hover {
-            background: var(--accent-green);
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-teal);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.85rem;
-            }
-
-            .hero {
-                padding: 6rem 1.5rem 4rem;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .contact-grid,
-            .featured-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .values-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .featured-image {
-                height: 300px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <svg class="logo-icon" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                    <!-- R Letter -->
-                    <path d="M 10 40 L 10 10 L 25 10 Q 35 10 35 18 Q 35 25 25 25 L 10 25 M 25 25 Q 35 25 40 40" stroke="#0F3A7D" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                    <!-- Arrow -->
-                    <path d="M 35 15 L 40 10 L 38 20" stroke="#10B981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="logo-text">Path<span>Ready</span></span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#values">القيم</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-            <a href="#contact" class="cta-nav">ابدأ الآن</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>تكنولوجيا تحرك عملك <span class="highlight">للأمام</span></h1>
-                <p>نساعد الشركات في الأسواق الناشئة على تحقيق أهدافها من خلال حلول تكنولوجية مبتكرة وموثوقة. من السودان للعالم.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">احصل على استشارة مجانية</a>
-                    <a href="#services" class="btn-secondary">تعرّف على خدماتنا</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="logo-large">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Main R -->
-                        <g transform="translate(50, 30)">
-                            <path d="M 20 180 L 20 20 L 100 20 Q 150 20 150 70 Q 150 110 100 120 L 20 120 M 100 120 Q 150 120 180 180" stroke="#0F3A7D" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            <!-- Arrow -->
-                            <g transform="translate(120, 20)">
-                                <path d="M 0 0 L 60 -30 L 50 30" stroke="#10B981" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            </g>
-                            <!-- Road -->
-                            <path d="M 30 150 Q 80 180 130 160 Q 150 150 170 140" stroke="#0F3A7D" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.6"/>
-                            <path d="M 50 160 L 70 165 M 90 170 L 110 165 M 130 160 L 150 155" stroke="#0F3A7D" stroke-width="6" fill="none" stroke-linecap="round"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="values" id="values">
-        <div class="values-container">
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="blog-container">
             <div class="section-header">
-                <h2>قيمنا الأساسية</h2>
-                <p>نؤمن بأن النجاح يبني على الأساس القوي من الموثوقية والابتكار والشراكة الحقيقية</p>
+                <h2>آخر المقالات</h2>
+                <p>اطلع على أحدث المقالات والنصائح والأخبار من فريقنا</p>
             </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">✓</div>
-                    <h3>الموثوقية</h3>
-                    <p>حلول مستقرة وآمنة تعتمد عليها عملك كل يوم بدون قلق</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">📈</div>
-                    <h3>النمو</h3>
-                    <p>نساعدك على تحقيق نمو مستدام وقابل للقياس في عملك</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">💡</div>
-                    <h3>الابتكار</h3>
-                    <p>أحدث التقنيات والحلول المخصصة لاحتياجاتك الفريدة</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🤝</div>
-                    <h3>الشراكة</h3>
-                    <p>فريق مخصص يعمل معك كشريك حقيقي نحو النجاح</p>
+            <div class="blog-grid" id="blogGrid">
+                <div style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                    <p>جاري تحميل المقالات...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Image Section -->
-    <section class="featured-section">
-        <div class="featured-container">
-            <div class="featured-grid">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="فريق يعمل على مشروع تكنولوجي" class="featured-image">
-                </div>
-                <div class="featured-content">
-                    <h2>حلول تكنولوجية للأسواق الناشئة</h2>
-                    <p>نفهم احتياجات السوق السودانية والعربية بشكل عميق. خبرتنا في تطوير الحلول المخصصة تجعلنا الشريك الأمثل لنمو عملك.</p>
-                    <p>من التطبيقات الجوالة إلى الأنظمة الشاملة، نقدم حلولاً مبتكرة تواكب احتياجات السوق المتطورة.</p>
-                    <a href="#contact" class="btn-primary">استشير معنا الآن</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="services-container">
+    <!-- Jobs Section -->
+    <section class="jobs-section" id="careers">
+        <div class="jobs-container">
             <div class="section-header">
-                <h2>خدماتنا</h2>
-                <p>حلول شاملة مصممة لتحريك عملك نحو المستقبل</p>
+                <h2>فرص التوظيف</h2>
+                <p>انضم إلى فريقنا والكن جزءاً من رحلة النمو والابتكار</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>حلول رقمية مخصصة</h3>
-                    <p>نطور حلول تكنولوجية قابلة للتكيف مع احتياجاتك الخاصة، من التطبيقات الجوّالة إلى الأنظمة الشاملة.</p>
-                    <a href="#contact" class="service-link">اطلب استشارة ←</a>
-                </div>
-                <div class="service-card">
-                    <h3>استشارات تكنولوجية</h3>
-                    <p>فريق خبراء يساعدك على اختيار أفضل الحلول التكنولوجية لتحسين كفاءة عملك وتقليل التكاليف.</p>
-                    <a href="#contact" class="service-link">تواصل معنا ←</a>
-                </div>
-                <div class="service-card">
-                    <h3>الدعم والصيانة</h3>
-                    <p>ضمان استمرار سير عملك بكفاءة مع دعم فني متواصل وتحديثات منتظمة وآمنة.</p>
-                    <a href="#contact" class="service-link">اعرف المزيد ←</a>
-                </div>
-                <div class="service-card">
-                    <h3>تدريب وتطوير</h3>
-                    <p>برامج تدريبية شاملة لفريقك لضمان الاستفادة القصوى من الحلول التكنولوجية المتوفرة.</p>
-                    <a href="#contact" class="service-link">احجز جلسة ←</a>
-                </div>
-                <div class="service-card">
-                    <h3>تكامل الأنظمة</h3>
-                    <p>دمج سلس لأنظمتك الحالية مع حلول جديدة لتحقيق تدفق عمل موحد وفعّال.</p>
-                    <a href="#contact" class="service-link">استشر معنا ←</a>
-                </div>
-                <div class="service-card">
-                    <h3>تحليل البيانات</h3>
-                    <p>استخراج الرؤى القيّمة من بياناتك لاتخاذ قرارات عمل مستنيرة وسريعة.</p>
-                    <a href="#contact" class="service-link">ابدأ الآن ←</a>
+            <div class="jobs-grid" id="jobsGrid">
+                <div style="text-align: center; padding: 2rem; color: var(--text-muted);">
+                    <p>جاري تحميل الوظائف المتاحة...</p>
                 </div>
             </div>
         </div>
@@ -1724,7 +999,7 @@ ${formData.message}
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" onsubmit="handleSubmit(event)">
+                <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label for="name">اسمك</label>
                         <input type="text" id="name" name="name" required>
@@ -1756,7 +1031,8 @@ ${formData.message}
         <div class="footer-content">
             <div class="footer-links">
                 <a href="#services">الخدمات</a>
-                <a href="#values">القيم</a>
+                <a href="#blog">المقالات</a>
+                <a href="#careers">الوظائف</a>
                 <a href="#contact">تواصل معنا</a>
                 <a href="#">سياسة الخصوصية</a>
                 <a href="#">شروط الاستخدام</a>
@@ -1767,31 +1043,192 @@ ${formData.message}
     </footer>
 
     <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                company: document.getElementById('company').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Create mailto link
-            const subject = `استفسار من ${formData.name} - PathReady Solutions`;
-            const body = `
-الاسم: ${formData.name}
-البريد: ${formData.email}
-الهاتف: ${formData.phone}
-الشركة: ${formData.company}
+        // API Configuration
+        const API_BASE = 'https://pathready-backend.onrender.com/api';
 
-الرسالة:
-${formData.message}
-            `.trim();
-            
-            const mailtoLink = `mailto:pathready@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoLink;
+        // Load Blog Posts
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch(`${API_BASE}/posts?status=published`);
+                const posts = await response.json();
+                
+                const blogGrid = document.getElementById('blogGrid');
+                
+                if (!posts || posts.length === 0) {
+                    blogGrid.innerHTML = '<p style="text-align: center; padding: 2rem; color: var(--text-muted); grid-column: 1/-1;">لا توجد مقالات منشورة حالياً</p>';
+                    return;
+                }
+
+                let html = '';
+                posts.slice(0, 3).forEach(post => {
+                    const date = new Date(post.created_at).toLocaleDateString('ar-SA');
+                    html += `
+                        <div class="blog-card">
+                            <div class="blog-card-image">📰</div>
+                            <div class="blog-card-content">
+                                <span class="blog-card-category">${post.category}</span>
+                                <h3>${post.title}</h3>
+                                <p>${post.excerpt}</p>
+                                <div class="blog-card-date">${date}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                blogGrid.innerHTML = html;
+            } catch (error) {
+                console.error('Error loading posts:', error);
+                document.getElementById('blogGrid').innerHTML = '<p style="text-align: center; padding: 2rem; color: #999; grid-column: 1/-1;">غير متصل بـ API حالياً</p>';
+            }
         }
+
+        // Load Jobs
+        async function loadJobs() {
+            try {
+                const response = await fetch(`${API_BASE}/jobs?status=open`);
+                const jobs = await response.json();
+                
+                const jobsGrid = document.getElementById('jobsGrid');
+                
+                if (!jobs || jobs.length === 0) {
+                    jobsGrid.innerHTML = '<p style="text-align: center; padding: 2rem; color: var(--text-muted); grid-column: 1/-1;">لا توجد وظائف متاحة حالياً</p>';
+                    return;
+                }
+
+                let html = '';
+                jobs.slice(0, 6).forEach(job => {
+                    html += `
+                        <div class="job-card">
+                            <div class="job-header">
+                                <h3>${job.title}</h3>
+                                <span class="job-type-badge">${job.job_type}</span>
+                            </div>
+                            <div class="job-meta">
+                                <div class="job-meta-item">📍 ${job.location}</div>
+                                <div class="job-meta-item">🏢 ${job.department}</div>
+                            </div>
+                            <p>${job.description.substring(0, 150)}...</p>
+                            <button class="btn-primary" onclick="applyJob(${job.id})">تقديم الطلب</button>
+                        </div>
+                    `;
+                });
+                
+                jobsGrid.innerHTML = html;
+            } catch (error) {
+                console.error('Error loading jobs:', error);
+                document.getElementById('jobsGrid').innerHTML = '<p style="text-align: center; padding: 2rem; color: #999; grid-column: 1/-1;">غير متصل بـ API حالياً</p>';
+            }
+        }
+
+        // Handle Contact Form Submission
+        async function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(document.getElementById('contactForm'));
+
+            try {
+                const response = await fetch(`${API_BASE}/contacts`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const alertDiv = document.createElement('div');
+                    alertDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #D1FAE5; color: #065F46; padding: 1rem 1.5rem; border-radius: 6px; z-index: 10000; border-left: 4px solid #10B981; box-shadow: 0 4px 12px rgba(0,0,0,0.1);';
+                    alertDiv.innerHTML = '✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.';
+                    document.body.appendChild(alertDiv);
+                    
+                    document.getElementById('contactForm').reset();
+                    
+                    setTimeout(() => alertDiv.remove(), 5000);
+                } else {
+                    alert('حدث خطأ. يرجى المحاولة مرة أخرى.');
+                }
+            } catch (error) {
+                alert('خطأ في الاتصال: ' + error.message);
+            }
+        }
+
+        // Apply for Job
+        function applyJob(jobId) {
+            const modal = `
+                <div onclick="closeJobModal()" style="position: fixed; top: 0; right: 0; left: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 10000;">
+                    <div onclick="event.stopPropagation()" style="background: white; padding: 2rem; border-radius: 12px; max-width: 500px; width: 90%;">
+                        <h3 style="color: var(--primary-dark); margin-bottom: 1.5rem;">تقديم طلب التوظيف</h3>
+                        <form onsubmit="submitJobApplication(event, ${jobId})">
+                            <div class="form-group">
+                                <label>الاسم الكامل</label>
+                                <input type="text" id="appName" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-light); border-radius: 6px;">
+                            </div>
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" id="appEmail" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-light); border-radius: 6px;">
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الهاتف</label>
+                                <input type="tel" id="appPhone" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-light); border-radius: 6px;">
+                            </div>
+                            <div class="form-group">
+                                <label>رسالة التغطية</label>
+                                <textarea id="appMessage" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-light); border-radius: 6px; min-height: 100px;"></textarea>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <button type="submit" class="btn-primary" style="flex: 1; padding: 0.8rem;">إرسال الطلب</button>
+                                <button type="button" onclick="closeJobModal()" style="flex: 1; padding: 0.8rem; background: var(--light-bg); color: var(--text-dark); border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">إلغاء</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modal);
+        }
+
+        // Submit Job Application
+        async function submitJobApplication(event, jobId) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('job_id', jobId);
+            formData.append('applicant_name', document.getElementById('appName').value);
+            formData.append('applicant_email', document.getElementById('appEmail').value);
+            formData.append('applicant_phone', document.getElementById('appPhone').value);
+            formData.append('cover_letter', document.getElementById('appMessage').value);
+
+            try {
+                const response = await fetch(`${API_BASE}/jobs/${jobId}/apply`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const alertDiv = document.createElement('div');
+                    alertDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #D1FAE5; color: #065F46; padding: 1rem 1.5rem; border-radius: 6px; z-index: 10000; border-left: 4px solid #10B981;';
+                    alertDiv.innerHTML = '✅ تم إرسال طلبك بنجاح!';
+                    document.body.appendChild(alertDiv);
+                    
+                    closeJobModal();
+                    setTimeout(() => alertDiv.remove(), 5000);
+                }
+            } catch (error) {
+                alert('خطأ: ' + error.message);
+            }
+        }
+
+        // Close Job Modal
+        function closeJobModal() {
+            const modals = document.querySelectorAll('[style*="position: fixed"]');
+            modals.forEach(m => {
+                if (m.style.background && m.style.background.includes('rgba')) {
+                    m.remove();
+                }
+            });
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            loadBlogPosts();
+            loadJobs();
+        });
     </script>
 </body>
 </html>
