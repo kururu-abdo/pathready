@@ -21,6 +21,9 @@
             --text-dark: #1E293B;
             --text-muted: #64748B;
             --border-light: #E2E8F0;
+            --danger: #dc2626;
+            --shadow-soft: 0 8px 24px rgba(15, 58, 125, 0.12);
+            --shadow-strong: 0 20px 45px rgba(15, 58, 125, 0.18);
         }
 
         html {
@@ -34,7 +37,10 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
+        a {
+            text-decoration: none;
+        }
+
         nav {
             position: fixed;
             top: 0;
@@ -62,7 +68,6 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            text-decoration: none;
         }
 
         .logo-icon {
@@ -82,7 +87,6 @@
 
         .nav-links a {
             color: #e2e8f0;
-            text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.3s ease;
             font-weight: 500;
@@ -97,7 +101,6 @@
             color: white;
             padding: 0.6rem 1.5rem;
             border-radius: 6px;
-            text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -108,7 +111,6 @@
             box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-dark) 0%, #162a47 100%);
             color: white;
@@ -170,18 +172,23 @@
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-green) 100%);
-            color: white;
+        .btn-primary,
+        .btn-secondary,
+        .btn-light,
+        .btn-neutral {
             padding: 1rem 2.5rem;
-            border: none;
             border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
             display: inline-block;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-green) 100%);
+            color: white;
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
         }
 
@@ -193,15 +200,7 @@
         .btn-secondary {
             background: transparent;
             color: white;
-            padding: 1rem 2.5rem;
             border: 2px solid var(--accent-teal);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
         }
 
         .btn-secondary:hover {
@@ -227,13 +226,34 @@
             justify-content: center;
         }
 
-        /* Values Section */
-        .values {
-            background: white;
+        .values,
+        .featured-section,
+        .services,
+        .blog-section,
+        .jobs-section,
+        .cta-section,
+        .contact {
             padding: 6rem 2rem;
         }
 
-        .values-container {
+        .values,
+        .featured-section,
+        .jobs-section,
+        .contact {
+            background: white;
+        }
+
+        .services,
+        .blog-section {
+            background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
+        }
+
+        .values-container,
+        .featured-container,
+        .services-container,
+        .blog-container,
+        .jobs-container,
+        .contact-container {
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -257,10 +277,16 @@
             margin: 0 auto;
         }
 
-        .values-grid {
+        .values-grid,
+        .services-grid,
+        .blog-grid,
+        .jobs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+        }
+
+        .values-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         }
 
         .value-card {
@@ -296,18 +322,8 @@
             line-height: 1.7;
         }
 
-        /* Featured Section */
-        .featured-section {
-            background: white;
-            padding: 6rem 2rem;
-        }
-
-        .featured-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .featured-grid {
+        .featured-grid,
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
@@ -336,21 +352,8 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Services Section */
-        .services {
-            background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
-            padding: 6rem 2rem;
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .services-grid {
-            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
         }
 
         .service-card {
@@ -381,7 +384,6 @@
 
         .service-link {
             color: var(--accent-teal);
-            text-decoration: none;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
@@ -393,21 +395,8 @@
             gap: 0.8rem;
         }
 
-        /* Blog Section */
-        .blog-section {
-            background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
-            padding: 6rem 2rem;
-        }
-
-        .blog-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .blog-grid {
-            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
         }
 
         .blog-card {
@@ -470,21 +459,8 @@
             color: var(--text-muted);
         }
 
-        /* Jobs Section */
-        .jobs-section {
-            background: white;
-            padding: 6rem 2rem;
-        }
-
-        .jobs-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .jobs-grid {
-            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
         }
 
         .job-card {
@@ -545,11 +521,19 @@
             margin-bottom: 1.5rem;
         }
 
-        /* CTA Section */
+        .job-link {
+            background: white;
+            color: var(--accent-teal);
+            border: 1px solid var(--accent-teal);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
         .cta-section {
             background: linear-gradient(135deg, var(--primary-dark) 0%, #162a47 100%);
             color: white;
-            padding: 6rem 2rem;
             text-align: center;
         }
 
@@ -566,24 +550,6 @@
             max-width: 600px;
             margin-right: auto;
             margin-left: auto;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: white;
-            padding: 6rem 2rem;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
         }
 
         .contact-info h3 {
@@ -613,9 +579,7 @@
 
         .contact-item a {
             color: var(--accent-teal);
-            text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
         }
 
         .contact-item a:hover {
@@ -677,8 +641,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            transition: all 0.3s ease;
             font-weight: bold;
         }
 
@@ -687,7 +649,6 @@
             transform: translateY(-3px);
         }
 
-        /* Footer */
         footer {
             background: var(--primary-dark);
             color: white;
@@ -710,15 +671,178 @@
 
         .footer-links a {
             color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
             color: var(--accent-teal);
         }
 
-        /* Responsive */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(13, 27, 42, 0.72);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.visible {
+            display: flex;
+        }
+
+        .modal-box {
+            background: white;
+            border-radius: 16px;
+            width: min(900px, 100%);
+            max-height: 90vh;
+            overflow: auto;
+            box-shadow: var(--shadow-strong);
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 1.25rem 1.5rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .close-btn {
+            border: none;
+            background: var(--light-bg);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .modal-content {
+            padding: 1.5rem;
+        }
+
+        .detail-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1d3557 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-hero small {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: #d1fae5;
+            border-radius: 999px;
+            padding: 0.4rem 0.8rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.72rem;
+        }
+
+        .detail-hero h4 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            color: #dbeafe;
+            font-size: 0.92rem;
+        }
+
+        .detail-body {
+            color: var(--text-dark);
+            line-height: 1.9;
+        }
+
+        .detail-body p,
+        .detail-body li {
+            margin-bottom: 0.9rem;
+        }
+
+        .detail-body ul {
+            list-style: disc;
+            padding-right: 1.2rem;
+        }
+
+        .detail-footer {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .btn-light {
+            background: var(--light-bg);
+            color: var(--primary-dark);
+            border: 1px solid var(--border-light);
+        }
+
+        .btn-neutral {
+            background: transparent;
+            color: var(--primary-dark);
+            border: 1px solid var(--border-light);
+        }
+
+        .application-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .application-form textarea {
+            min-height: 130px;
+        }
+
+        .application-form .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .success-box {
+            display: none;
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            padding: 0.9rem 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 24px;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(13, 27, 42, 0.95);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 999px;
+            box-shadow: var(--shadow-soft);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s ease;
+            z-index: 2100;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 1rem;
@@ -733,7 +857,9 @@
                 padding: 6rem 1.5rem 4rem;
             }
 
-            .hero-container {
+            .hero-container,
+            .featured-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -750,16 +876,11 @@
                 font-size: 1.8rem;
             }
 
-            .contact-grid,
-            .featured-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
             .values-grid,
             .services-grid,
             .blog-grid,
-            .jobs-grid {
+            .jobs-grid,
+            .application-form .form-row {
                 grid-template-columns: 1fr;
             }
 
@@ -783,7 +904,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#" class="logo">
@@ -803,12 +923,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <h1>تكنولوجيا تحرك عملك <span class="highlight">للأمام</span></h1>
-                <p>نساعد الشركات في الأسواق الناشئة على تحقيق أهدافها من خلال حلول تكنولوجية مبتكرة وموثوقة. من السودان للعالم.</p>
+                <p>نساعد الشركات في الأسواق الناشئة على تحقيق أهدافها من خلال حلول تكنولوجية مبتكرة وموثوقة. من التطبيقات الذكية إلى الأنظمة المؤسسية، نقدم الخبرة التي تسرّع مسار نموك.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn-primary">احصل على استشارة مجانية</a>
                     <a href="#services" class="btn-secondary">تعرّف على خدماتنا</a>
@@ -831,7 +950,6 @@
         </div>
     </section>
 
-    <!-- Values Section -->
     <section class="values" id="values">
         <div class="values-container">
             <div class="section-header">
@@ -863,7 +981,6 @@
         </div>
     </section>
 
-    <!-- Featured Image Section -->
     <section class="featured-section">
         <div class="featured-container">
             <div class="featured-grid">
@@ -872,7 +989,7 @@
                 </div>
                 <div class="featured-content">
                     <h2>حلول تكنولوجية للأسواق الناشئة</h2>
-                    <p>نفهم احتياجات السوق السودانية والعربية بشكل عميق. خبرتنا في تطوير الحلول المخصصة تجعلنا الشريك الأمثل لنمو عملك.</p>
+                    <p>نفهم احتياجات السوق السودانية والعربية بشكل عميق. خبرتنا في تطوير الحلول المخصصة تجعلنا الشريك المثالي للمنظمات التي تريد التوسع بثقة.</p>
                     <p>من التطبيقات الجوالة إلى الأنظمة الشاملة، نقدم حلولاً مبتكرة تواكب احتياجات السوق المتطورة.</p>
                     <a href="#contact" class="btn-primary">استشير معنا الآن</a>
                 </div>
@@ -880,7 +997,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
         <div class="services-container">
             <div class="section-header">
@@ -890,7 +1006,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <h3>حلول رقمية مخصصة</h3>
-                    <p>نطور حلول تكنولوجية قابلة للتكيف مع احتياجاتك الخاصة، من التطبيقات الجوّالة إلى الأنظمة الشاملة.</p>
+                    <p>نطور حلول تكنولوجية قابلة للتكيف مع احتياجاتك الخاصة، من التطبيقات الجوالة إلى الأنظمة الشاملة.</p>
                     <a href="#contact" class="service-link">اطلب استشارة ←</a>
                 </div>
                 <div class="service-card">
@@ -922,44 +1038,32 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
     <section class="blog-section" id="blog">
         <div class="blog-container">
             <div class="section-header">
                 <h2>آخر المقالات</h2>
                 <p>اطلع على أحدث المقالات والنصائح والأخبار من فريقنا</p>
             </div>
-            <div class="blog-grid" id="blogGrid">
-                <div style="text-align: center; padding: 2rem; color: var(--text-muted);">
-                    <p>جاري تحميل المقالات...</p>
-                </div>
-            </div>
+            <div class="blog-grid" id="blogGrid"></div>
         </div>
     </section>
 
-    <!-- Jobs Section -->
     <section class="jobs-section" id="careers">
         <div class="jobs-container">
             <div class="section-header">
                 <h2>فرص التوظيف</h2>
                 <p>انضم إلى فريقنا والكن جزءاً من رحلة النمو والابتكار</p>
             </div>
-            <div class="jobs-grid" id="jobsGrid">
-                <div style="text-align: center; padding: 2rem; color: var(--text-muted);">
-                    <p>جاري تحميل الوظائف المتاحة...</p>
-                </div>
-            </div>
+            <div class="jobs-grid" id="jobsGrid"></div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <h2>هل أنت جاهز لتحريك عملك للأمام؟</h2>
         <p>دع PathReady Solutions تساعدك على تحقيق أهدافك من خلال حلول تكنولوجية متطورة ومخصصة لاحتياجاتك.</p>
         <a href="#contact" class="btn-primary">تواصل معنا اليوم</a>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="contact-grid">
@@ -999,34 +1103,28 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">اسمك</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">بريدك الإلكتروني</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">رقم هاتفك</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="company">اسم شركتك</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">رسالتك</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%;">أرسل رسالتك</button>
-                </form>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم</label>
+                            <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">رسالتك</label>
+                            <textarea id="message" name="message" placeholder="أخبرنا عن احتياجك..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">إرسال الرسالة</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
@@ -1034,201 +1132,361 @@
                 <a href="#blog">المقالات</a>
                 <a href="#careers">الوظائف</a>
                 <a href="#contact">تواصل معنا</a>
-                <a href="#">سياسة الخصوصية</a>
-                <a href="#">شروط الاستخدام</a>
             </div>
-            <p>&copy; 2024 PathReady Solutions. جميع الحقوق محفوظة.</p>
-            <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 1rem;">تكنولوجيا تحرك عملك للأمام | من السودان للعالم</p>
+            <p>© 2026 PathReady Solutions. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="detailTitle">تفاصيل</h3>
+                <button class="close-btn" type="button" aria-label="إغلاق" onclick="closeModal('detailModal')">×</button>
+            </div>
+            <div class="modal-content" id="detailContent"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="applyModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>تقديم على الوظيفة</h3>
+                <button class="close-btn" type="button" aria-label="إغلاق" onclick="closeModal('applyModal')">×</button>
+            </div>
+            <div class="modal-content">
+                <div id="applySuccess" class="success-box">تم إرسال طلبك بنجاح. سنقوم بالتواصل معك قريباً.</div>
+                <form id="applicationForm" class="application-form">
+                    <input type="hidden" id="jobIdInput" name="jobId">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appName">الاسم الكامل</label>
+                            <input type="text" id="appName" name="appName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appEmail">البريد الإلكتروني</label>
+                            <input type="email" id="appEmail" name="appEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="appPhone">رقم الهاتف</label>
+                            <input type="tel" id="appPhone" name="appPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appPosition">الوظيفة</label>
+                            <input type="text" id="appPosition" name="appPosition" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="appMessage">سيرة ذاتية / رسالة التقديم</label>
+                        <textarea id="appMessage" name="appMessage" placeholder="اكتب نبذة عنك ومهاراتك..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
     <script>
-        // API Configuration
-        const API_BASE = 'https://pathready-backend.onrender.com/api';
-
-        // Load Blog Posts
-        async function loadBlogPosts() {
-            try {
-                const response = await fetch(`${API_BASE}/posts?status=published`);
-                const posts = await response.json();
-                
-                const blogGrid = document.getElementById('blogGrid');
-                
-                if (!posts || posts.length === 0) {
-                    blogGrid.innerHTML = '<p style="text-align: center; padding: 2rem; color: var(--text-muted); grid-column: 1/-1;">لا توجد مقالات منشورة حالياً</p>';
-                    return;
-                }
-
-                let html = '';
-                posts.slice(0, 3).forEach(post => {
-                    const date = new Date(post.created_at).toLocaleDateString('ar-SA');
-                    html += `
-                        <div class="blog-card">
-                            <div class="blog-card-image">📰</div>
-                            <div class="blog-card-content">
-                                <span class="blog-card-category">${post.category}</span>
-                                <h3>${post.title}</h3>
-                                <p>${post.excerpt}</p>
-                                <div class="blog-card-date">${date}</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                
-                blogGrid.innerHTML = html;
-            } catch (error) {
-                console.error('Error loading posts:', error);
-                document.getElementById('blogGrid').innerHTML = '<p style="text-align: center; padding: 2rem; color: #999; grid-column: 1/-1;">غير متصل بـ API حالياً</p>';
+        const posts = [
+            {
+                id: 'ai-growth',
+                title: 'كيف تسرّع الذكاء الاصطناعي نمو الأعمال الصغيرة؟',
+                category: 'ذكاء اصطناعي',
+                date: '15 سبتمبر 2026',
+                image: '🤖',
+                excerpt: 'تعرف على كيفية استخدام الذكاء الاصطناعي لتحسين تجربة العملاء، أتمتة المهام، وتحليل البيانات بشكل أسرع.',
+                content: `
+                    <p>في بيئة الأعمال الحالية، أصبحت القدرة على اتخاذ القرار بسرعة أمراً حاسماً. الذكاء الاصطناعي لا يقدّم فقط حلولاً تقنية، بل يساعد الشركات الصغيرة على النمو بطرق قابلة للقياس.</p>
+                    <p>من خلال أتمتة الردود التلقائية، تحليل الرسائل، والتنبؤ بالطلب، يمكن للمنظمات تخصيص الوقت لعاملين أكثر فعالية ورفع جودة الخدمة.</p>
+                    <ul>
+                        <li>أتمتة المهام المتكررة وتوقيت الاستجابات.</li>
+                        <li>تحليل سلوك العملاء لتوجيه الحملات التسويقية.</li>
+                        <li>توقع الاتجاهات عبر تقارير ذكية وتقييم أداء الفريق.</li>
+                    </ul>
+                    <p>النجاح الحقيقي يحدث عندما تُستخدم الأدوات الذكية بشكل صحيح ضمن استراتيجية واضحة. لذلك، فإن بناء ثقافة بيانات ومهارات تقنية داخل المنظمة يضمن استمرارية التقدم.</p>
+                `
+            },
+            {
+                id: 'digital-transformation',
+                title: 'رحلة التحول الرقمي: من الفكرة إلى التنفيذ',
+                category: 'تحول رقمي',
+                date: '8 سبتمبر 2026',
+                image: '💻',
+                excerpt: 'خريطة عملية لتقليل المخاطر قبل إطلاق أي مشروع رقمي وتحويله إلى نظام فعال وقابل للتوسع.',
+                content: `
+                    <p>معظم المشاريع الرقمية تفشل ليس بسبب الفكرة، بل بسبب غياب الخطة التنفيذية. التحول الرقمي يحتاج إلى رؤية واضحة، أولويات مدروسة، وموارد مخصصة لكل مرحلة.</p>
+                    <p>خلال الرحلة، تبدأ الشركات بتحديد المشكلة وكيفية قياس النجاح، ثم تنتقل إلى تصميم الحل، بناء الأنظمة، والاختبار والتطوير بشكل متكرر.</p>
+                    <ul>
+                        <li>تحديد أهداف العمل ومؤشرات النجاح.</li>
+                        <li>اختيار الحل المناسب مع مراعاة التكلفة والسرعة.</li>
+                        <li>تدريب الفريق لضمان اعتماد حقيقي على النظام.</li>
+                    </ul>
+                    <p>التحول الرقمي الحقيقي ليس مجرد إطلاق تطبيق، بل تحسين مستمر في العمليات والقرارات لأن التكنولوجيا تؤثر على كل فريق.</p>
+                `
+            },
+            {
+                id: 'customer-experience',
+                title: 'تصميم تجربة عميل متميزة في بيئات الخدمة الرقمية',
+                category: 'تجربة عميل',
+                date: '1 سبتمبر 2026',
+                image: '✨',
+                excerpt: 'العملاء لا يرحبون فقط بالخدمة، بل يتوقعون تفاعلًا سريعًا، شخصيًا، ومريحًا عبر القنوات المختلفة.',
+                content: `
+                    <p>تجربة العميل لا تتوقف عند واجهة التطبيق، بل تشمل سرعة الاستجابة، وضوح المعلومات، وسهولة الوصول إلى الحل المناسب في كل لحظة.</p>
+                    <p>عند تصميم الخدمة الرقمية، ينبغي التركيز على فهم رحلة العميل من اللحظة الأولى إلى مرحلة متابعة الخدمة بعد البيع. كل نقطة تواصل تمثل فرصة لبناء الثقة.</p>
+                    <ul>
+                        <li>تبسيط واجهات المستخدم وتخطيطها بوضوح.</li>
+                        <li>الاستجابة السريعة عبر القنوات المتعددة.</li>
+                        <li>تحليل ملاحظات العملاء ودمجها في التحسينات.</li>
+                    </ul>
+                    <p>كل تحسين صغير في تجربة العميل يمكن أن يرفع الولاء ويقلل التكاليف التشغيلية على المدى الطويل.</p>
+                `
             }
+        ];
+
+        const jobs = [
+            {
+                id: 'frontend-developer',
+                title: 'مطور Frontend',
+                type: 'دوام كامل',
+                location: 'الخرطوم / عن بعد',
+                salary: 'متغيرة',
+                summary: 'نبحث عن مطور واجهات حديثة قادر على بناء تجارب مستخدم سلسة وسريعة وممتازة.',
+                description: 'ستعمل على تطوير واجهات مستخدم احترافية باستخدام HTML, CSS و JavaScript، مع تحسين أداء الصفحات وتجربة المستخدم في المشاريع المختلفة.',
+                responsibilities: [
+                    'تطوير واجهات مستخدم متجاوبة واحترافية.',
+                    'تحسين الأداء وتجربة المستخدم عبر أفضل الممارسات.',
+                    'التعاون مع الفريق الفني لتوثيق المتطلبات وتنفيذها.',
+                    'إجراء تحسينات مستمرة على التجربة الرقمية.'
+                ],
+                requirements: [
+                    'خبرة 1-3 سنوات في تطوير Frontend.',
+                    'إتقان HTML, CSS, JavaScript.',
+                    'إلمام بـ React أو Vue.',
+                    'قدرة على العمل ضمن فريق ومتابعة المهام.'
+                ]
+            },
+            {
+                id: 'ui-ux-designer',
+                title: 'مصمم واجهات وتجربة مستخدم',
+                type: 'دوام كامل',
+                location: 'الخرطوم',
+                salary: 'منافسة',
+                summary: 'نحتاج مصممًا يقدّم حلولًا عملية وعملية توازن بين الجمال والوظيفة.',
+                description: 'ستساهم في تصميم واجهات مستخدم جذابة ومتناسقة مع تجربة مستخدم سهلة ومريحة، مع تنفيذ أفكار المنتجات بشكل عملي.',
+                responsibilities: [
+                    'تصميم واجهات مستخدم متجاوبة ومتماسكة.',
+                    'بناء أنظمة هوية بصرية متسقة.',
+                    'تحليل احتياجات المستخدمين ومعالجتها بصرياً.',
+                    'التعاون مع المطورين لتجهيز design system.'
+                ],
+                requirements: [
+                    'خبرة في تصميم UX/UI.',
+                    'إتقان Figma أو Adobe XD.',
+                    'فهم مبادئ تجربة المستخدم.',
+                    'قدرة على تقديم حلول عملية ومبدعة.'
+                ]
+            },
+            {
+                id: 'project-manager',
+                title: 'مدير مشاريع تقنية',
+                type: 'مستقل / طويل الأمد',
+                location: 'عن بعد',
+                salary: 'متغيرة',
+                summary: 'نبحث عن شخص يملك مهارات تنظيمية ممتازة ويستطيع قيادة المشاريع الرقمية من الفكرة إلى التنفيذ.',
+                description: 'ستكون مسؤولاً عن متابعة المشاريع من مرحلة التخطيط إلى التنفيذ، وضمان التزام الفريق بالمدة والجودة وسلامة التنفيذ.',
+                responsibilities: [
+                    'تحديد الجدول الزمني والمهام لكل مشروع.',
+                    'مراقبة التنفيذ والتواصل مع الأطراف المعنية.',
+                    'تحديد المخاطر ووضع حلول عملية لها.',
+                    'إعداد تقارير تقدم وتحديثات دورية.'
+                ],
+                requirements: [
+                    'خبرة لا تقل عن 2 سنوات في إدارة المشاريع.',
+                    'مهارات تواصل قوية.',
+                    'قدرة على التعامل مع فرق متعددة.',
+                    'فهم أساسي لأنظمة العمل الرقمي.'
+                ]
+            }
+        ];
+
+        const blogGrid = document.getElementById('blogGrid');
+        const jobsGrid = document.getElementById('jobsGrid');
+        const detailModal = document.getElementById('detailModal');
+        const applyModal = document.getElementById('applyModal');
+        const detailContent = document.getElementById('detailContent');
+        const detailTitle = document.getElementById('detailTitle');
+        const toast = document.getElementById('toast');
+
+        function renderPosts() {
+            blogGrid.innerHTML = posts.map(post => `
+                <article class="blog-card" onclick="openPost('${post.id}')" aria-label="فتح مقال ${post.title}">
+                    <div class="blog-card-image">${post.image}</div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">${post.category}</span>
+                        <h3>${post.title}</h3>
+                        <p>${post.excerpt}</p>
+                        <div class="blog-card-date">${post.date}</div>
+                    </div>
+                </article>
+            `).join('');
         }
 
-        // Load Jobs
-        async function loadJobs() {
-            try {
-                const response = await fetch(`${API_BASE}/jobs?status=open`);
-                const jobs = await response.json();
-                
-                const jobsGrid = document.getElementById('jobsGrid');
-                
-                if (!jobs || jobs.length === 0) {
-                    jobsGrid.innerHTML = '<p style="text-align: center; padding: 2rem; color: var(--text-muted); grid-column: 1/-1;">لا توجد وظائف متاحة حالياً</p>';
-                    return;
-                }
-
-                let html = '';
-                jobs.slice(0, 6).forEach(job => {
-                    html += `
-                        <div class="job-card">
-                            <div class="job-header">
-                                <h3>${job.title}</h3>
-                                <span class="job-type-badge">${job.job_type}</span>
-                            </div>
-                            <div class="job-meta">
-                                <div class="job-meta-item">📍 ${job.location}</div>
-                                <div class="job-meta-item">🏢 ${job.department}</div>
-                            </div>
-                            <p>${job.description.substring(0, 150)}...</p>
-                            <button class="btn-primary" onclick="applyJob(${job.id})">تقديم الطلب</button>
-                        </div>
-                    `;
-                });
-                
-                jobsGrid.innerHTML = html;
-            } catch (error) {
-                console.error('Error loading jobs:', error);
-                document.getElementById('jobsGrid').innerHTML = '<p style="text-align: center; padding: 2rem; color: #999; grid-column: 1/-1;">غير متصل بـ API حالياً</p>';
-            }
+        function renderJobs() {
+            jobsGrid.innerHTML = jobs.map(job => `
+                <article class="job-card">
+                    <div class="job-header">
+                        <h3>${job.title}</h3>
+                        <span class="job-type-badge">${job.type}</span>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-meta-item">📍 ${job.location}</span>
+                        <span class="job-meta-item">💰 ${job.salary}</span>
+                    </div>
+                    <p>${job.summary}</p>
+                    <button class="job-link" type="button" onclick="openJob('${job.id}')">عرض التفاصيل</button>
+                </article>
+            `).join('');
         }
 
-        // Handle Contact Form Submission
-        async function handleSubmit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(document.getElementById('contactForm'));
+        function openPost(postId) {
+            const post = posts.find(item => item.id === postId);
+            if (!post) return;
 
-            try {
-                const response = await fetch(`${API_BASE}/contacts`, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    const alertDiv = document.createElement('div');
-                    alertDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #D1FAE5; color: #065F46; padding: 1rem 1.5rem; border-radius: 6px; z-index: 10000; border-left: 4px solid #10B981; box-shadow: 0 4px 12px rgba(0,0,0,0.1);';
-                    alertDiv.innerHTML = '✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.';
-                    document.body.appendChild(alertDiv);
-                    
-                    document.getElementById('contactForm').reset();
-                    
-                    setTimeout(() => alertDiv.remove(), 5000);
-                } else {
-                    alert('حدث خطأ. يرجى المحاولة مرة أخرى.');
-                }
-            } catch (error) {
-                alert('خطأ في الاتصال: ' + error.message);
-            }
-        }
-
-        // Apply for Job
-        function applyJob(jobId) {
-            const modal = `
-                <div onclick="closeJobModal()" style="position: fixed; top: 0; right: 0; left: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 10000;">
-                    <div onclick="event.stopPropagation()" style="background: white; padding: 2rem; border-radius: 12px; max-width: 500px; width: 90%;">
-                        <h3 style="color: var(--primary-dark); margin-bottom: 1.5rem;">تقديم طلب التوظيف</h3>
-                        <form onsubmit="submitJobApplication(event, ${jobId})">
-                            <div class="form-group">
-                                <label>الاسم الكامل</label>
-                                <input type="text" id="appName" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-light); border-radius: 6px;">
-                            </div>
-                            <div class="form-group">
-                                <label>البريد الإلكتروني</label>
-                                <input type="email" id="appEmail" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-light); border-radius: 6px;">
-                            </div>
-                            <div class="form-group">
-                                <label>رقم الهاتف</label>
-                                <input type="tel" id="appPhone" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-light); border-radius: 6px;">
-                            </div>
-                            <div class="form-group">
-                                <label>رسالة التغطية</label>
-                                <textarea id="appMessage" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-light); border-radius: 6px; min-height: 100px;"></textarea>
-                            </div>
-                            <div style="display: flex; gap: 1rem;">
-                                <button type="submit" class="btn-primary" style="flex: 1; padding: 0.8rem;">إرسال الطلب</button>
-                                <button type="button" onclick="closeJobModal()" style="flex: 1; padding: 0.8rem; background: var(--light-bg); color: var(--text-dark); border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">إلغاء</button>
-                            </div>
-                        </form>
+            detailTitle.textContent = post.title;
+            detailContent.innerHTML = `
+                <div class="detail-hero">
+                    <small>${post.category}</small>
+                    <h4>${post.title}</h4>
+                    <div class="detail-meta">
+                        <span>📅 ${post.date}</span>
+                        <span>📝 مقال</span>
                     </div>
                 </div>
+                <div class="detail-body">
+                    ${post.content}
+                </div>
+                <div class="detail-footer">
+                    <button class="btn-primary" type="button" onclick="closeModal('detailModal')">إغلاق</button>
+                </div>
             `;
-            document.body.insertAdjacentHTML('beforeend', modal);
+
+            window.location.hash = `post-${post.id}`;
+            detailModal.classList.add('visible');
         }
 
-        // Submit Job Application
-        async function submitJobApplication(event, jobId) {
-            event.preventDefault();
+        function openJob(jobId) {
+            const job = jobs.find(item => item.id === jobId);
+            if (!job) return;
 
-            const formData = new FormData();
-            formData.append('job_id', jobId);
-            formData.append('applicant_name', document.getElementById('appName').value);
-            formData.append('applicant_email', document.getElementById('appEmail').value);
-            formData.append('applicant_phone', document.getElementById('appPhone').value);
-            formData.append('cover_letter', document.getElementById('appMessage').value);
+            detailTitle.textContent = job.title;
+            detailContent.innerHTML = `
+                <div class="detail-hero">
+                    <small>${job.type}</small>
+                    <h4>${job.title}</h4>
+                    <div class="detail-meta">
+                        <span>📍 ${job.location}</span>
+                        <span>💰 ${job.salary}</span>
+                    </div>
+                </div>
+                <div class="detail-body">
+                    <p>${job.description}</p>
+                    <h5>المسؤوليات</h5>
+                    <ul>
+                        ${job.responsibilities.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                    <h5>المتطلبات</h5>
+                    <ul>
+                        ${job.requirements.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="detail-footer">
+                    <button class="btn-primary" type="button" onclick="openApply('${job.id}')">تقديم الآن</button>
+                    <button class="btn-neutral" type="button" onclick="closeModal('detailModal')">إغلاق</button>
+                </div>
+            `;
 
-            try {
-                const response = await fetch(`${API_BASE}/jobs/${jobId}/apply`, {
-                    method: 'POST',
-                    body: formData
-                });
+            window.location.hash = `job-${job.id}`;
+            detailModal.classList.add('visible');
+        }
 
-                if (response.ok) {
-                    const alertDiv = document.createElement('div');
-                    alertDiv.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #D1FAE5; color: #065F46; padding: 1rem 1.5rem; border-radius: 6px; z-index: 10000; border-left: 4px solid #10B981;';
-                    alertDiv.innerHTML = '✅ تم إرسال طلبك بنجاح!';
-                    document.body.appendChild(alertDiv);
-                    
-                    closeJobModal();
-                    setTimeout(() => alertDiv.remove(), 5000);
-                }
-            } catch (error) {
-                alert('خطأ: ' + error.message);
+        function openApply(jobId) {
+            const job = jobs.find(item => item.id === jobId);
+            if (!job) return;
+
+            document.getElementById('jobIdInput').value = job.id;
+            document.getElementById('appPosition').value = job.title;
+            document.getElementById('applicationForm').reset();
+            document.getElementById('applySuccess').style.display = 'none';
+            closeModal('detailModal');
+            applyModal.classList.add('visible');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) modal.classList.remove('visible');
+
+            if (!detailModal.classList.contains('visible') && !applyModal.classList.contains('visible')) {
+                history.replaceState(null, '', ' ');
             }
         }
 
-        // Close Job Modal
-        function closeJobModal() {
-            const modals = document.querySelectorAll('[style*="position: fixed"]');
-            modals.forEach(m => {
-                if (m.style.background && m.style.background.includes('rgba')) {
-                    m.remove();
-                }
-            });
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2200);
         }
 
-        // Initialize
-        window.addEventListener('load', () => {
-            loadBlogPosts();
-            loadJobs();
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            showToast('تم إرسال رسالتك بنجاح');
+            this.reset();
         });
+
+        document.getElementById('applicationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const jobTitle = document.getElementById('appPosition').value;
+            const jobId = document.getElementById('jobIdInput').value;
+
+            document.getElementById('applySuccess').style.display = 'block';
+            showToast(`تم إرسال طلبك لوظيفة ${jobTitle}`);
+
+            setTimeout(() => {
+                closeModal('applyModal');
+                document.getElementById('applicationForm').reset();
+                if (jobId) {
+                    window.location.hash = `job-${jobId}`;
+                }
+            }, 1200);
+        });
+
+        document.addEventListener('click', function (event) {
+            if (event.target === detailModal) closeModal('detailModal');
+            if (event.target === applyModal) closeModal('applyModal');
+        });
+
+        function handleHash() {
+            const hash = window.location.hash;
+            if (!hash) return;
+
+            if (hash.startsWith('#post-')) {
+                const id = hash.replace('#post-', '');
+                openPost(id);
+            }
+
+            if (hash.startsWith('#job-')) {
+                const id = hash.replace('#job-', '');
+                openJob(id);
+            }
+        }
+
+        window.addEventListener('hashchange', handleHash);
+        renderPosts();
+        renderJobs();
+        handleHash();
     </script>
 </body>
 </html>
